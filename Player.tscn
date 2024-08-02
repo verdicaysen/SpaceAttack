@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cw3jr0b8e3hsb"]
+
+[ext_resource type="Texture2D" uid="uid://buk4mdux0jnvh" path="res://assets/textures/player_ship.png" id="1_per73"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_htsi0"]
+radius = 38.0
+height = 108.0
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_per73")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_htsi0")
