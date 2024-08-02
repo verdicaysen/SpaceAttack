@@ -1,3 +1,16 @@
-[gd_scene format=3 uid="uid://bqf4dg5t3v13v"]
+[gd_scene load_steps=3 format=3 uid="uid://bqf4dg5t3v13v"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="Texture2D" uid="uid://8g5w6s1qd12j" path="res://assets/textures/bg.png" id="1_oeokx"]
+[ext_resource type="Texture2D" uid="uid://buk4mdux0jnvh" path="res://assets/textures/player_ship.png" id="2_hmfqi"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1286.0
+offset_bottom = 723.0
+texture = ExtResource("1_oeokx")
+stretch_mode = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(611, 346)
+texture = ExtResource("2_hmfqi")
