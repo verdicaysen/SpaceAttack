@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bqf4dg5t3v13v"]
+
+[ext_resource type="Texture2D" uid="uid://8g5w6s1qd12j" path="res://assets/textures/bg.png" id="1_aicgb"]
+[ext_resource type="PackedScene" uid="uid://cw3jr0b8e3hsb" path="res://scenes/Player.tscn" id="2_eu64m"]
+[ext_resource type="PackedScene" uid="uid://cj0bumrlbp8o7" path="res://scenes/Rocket.tscn" id="3_l7myd"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 1286.0
+offset_bottom = 723.0
+texture = ExtResource("1_aicgb")
+stretch_mode = 1
+
+[node name="Player" parent="." instance=ExtResource("2_eu64m")]
+position = Vector2(51, 363)
+scale = Vector2(1.5, 1.5)
+
+[node name="Rocket" parent="." instance=ExtResource("3_l7myd")]
+position = Vector2(184, 356)

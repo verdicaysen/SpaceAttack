@@ -15,14 +15,7 @@ func _physics_process(delta):
         velocity.x = speed
     move_and_slide()
 
-#If the x position goes below zero go back to zero so you can't leave the viewport on the x axis.
-    if global_position.x < 0:
-        global_position.x = 0
-    if global_position.x > 1280:
-        global_position.x = 1280
-    if global_position.y < 0:
-        global_position.y = 0
-    if global_position.y > 720:
-        global_position.y = 720
-    print(global_position)
+    var screen_size = get_viewport_rect().size #Get screen size from Godot.
+#Now clamp it. If the x position goes below zero go back to zero so you can't leave the viewport on the x axis.
 
+    global_position = global_position.clamp(Vector2(0,0), screen_size)
