@@ -17,3 +17,6 @@ shape = SubResource("CapsuleShape2D_gjrpg")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_jgqy2")
+
+[node name="VisibleNotifier" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(-23, -1)

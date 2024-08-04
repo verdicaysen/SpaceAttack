@@ -1,4 +1,7 @@
 extends CharacterBody2D
+#Preload this as a global variable so you're only loading the file once into memory.
+var rocket_scene = preload("res://scenes/Rocket.tscn")
+@onready var rocket_container = $RocketContainer #This is like get_node("RocketContainer)You can do this instead of having your node references loaded under the func _ready(): function.
 
 func _process(delta):
 	if Input.is_action_just_pressed("fire"):
@@ -27,11 +30,10 @@ func _physics_process(delta):
 
 #Tell the game what to do when the process function library calls _fire.
 func _fire():
-	var rocket_scene = preload("res://scenes/Rocket.tscn")
 	var rocket_instance = rocket_scene.instantiate()
-	add_child(rocket_instance)
-	print("fire")
-	
+	rocket_container.add_child(rocket_instance)
+	rocket_instance.global_position = global_position
+	rocket_instance.global_position.x +=50
 
 
 
