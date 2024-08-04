@@ -12,3 +12,9 @@ func _physics_process(delta):
 func _on_screen_exited():
 	queue_free() #Call this to remove the attached node.
 	print("Rocket removed.") #Confirm its removed.
+
+# Report when you enter the right area. TODO: Someday we should give these guys health and power and powerups and all that fun stuff just for giggles. Enemies too. 
+func _on_area_entered(area):
+	queue_free()
+	area.die()
+

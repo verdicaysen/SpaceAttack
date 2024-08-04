@@ -8,6 +8,8 @@ radius = 13.0
 height = 68.0
 
 [node name="Rocket" type="Area2D"]
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_f3iiw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -20,3 +22,5 @@ texture = ExtResource("1_jgqy2")
 
 [node name="VisibleNotifier" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-23, -1)
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

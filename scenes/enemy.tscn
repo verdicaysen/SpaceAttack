@@ -9,6 +9,8 @@ height = 578.0
 
 [node name="Enemy" type="Area2D"]
 scale = Vector2(0.3, 0.3)
+collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_vpws4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
