@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqf4dg5t3v13v"]
+[gd_scene load_steps=5 format=3 uid="uid://bqf4dg5t3v13v"]
 
 [ext_resource type="Texture2D" uid="uid://8g5w6s1qd12j" path="res://assets/textures/bg.png" id="1_aicgb"]
 [ext_resource type="PackedScene" uid="uid://cw3jr0b8e3hsb" path="res://scenes/Player.tscn" id="2_eu64m"]
 [ext_resource type="PackedScene" uid="uid://c3n4vpmwohrw0" path="res://scenes/enemy_spawner.tscn" id="3_xg623"]
+[ext_resource type="PackedScene" uid="uid://b78pwuejl03pi" path="res://scenes/trash_can.tscn" id="4_j1jo3"]
 
 [node name="Main" type="Node2D"]
 
@@ -17,3 +18,5 @@ position = Vector2(51, 363)
 scale = Vector2(1.5, 1.5)
 
 [node name="EnemySpawner" parent="." instance=ExtResource("3_xg623")]
+
+[node name="TrashCan" parent="." instance=ExtResource("4_j1jo3")]

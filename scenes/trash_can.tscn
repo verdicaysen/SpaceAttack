@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b78pwuejl03pi"]
+
+[ext_resource type="Script" path="res://scenes/TrashCan.gd" id="1_jnrmu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3qk57"]
+size = Vector2(142, 734)
+
+[node name="TrashCan" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_jnrmu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-158, 357)
+shape = SubResource("RectangleShape2D_3qk57")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
