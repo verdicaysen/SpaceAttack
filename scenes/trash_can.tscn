@@ -6,7 +6,7 @@
 size = Vector2(142, 734)
 
 [node name="TrashCan" type="Area2D"]
-collision_layer = 2
+collision_layer = 8
 collision_mask = 2
 script = ExtResource("1_jnrmu")
 

@@ -13,6 +13,6 @@ func _physics_process(delta):
 func die():
 	queue_free()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _on_body_entered(body):
+	body.take_damage()
+	die()
