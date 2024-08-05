@@ -8,5 +8,6 @@ func _on_player_took_damage():
 	if lives == 0:
 		print("Game Over")
 		player.die()
-	print("Player has", lives, " lives left.")
+	else:
+		print("Player has", lives, " lives left.")
 	
