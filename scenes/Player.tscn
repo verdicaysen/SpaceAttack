@@ -1,7 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://cw3jr0b8e3hsb"]
+[gd_scene load_steps=9 format=3 uid="uid://cw3jr0b8e3hsb"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_6emnt"]
 [ext_resource type="Texture2D" uid="uid://buk4mdux0jnvh" path="res://assets/textures/player_ship.png" id="1_per73"]
+[ext_resource type="AudioStream" uid="uid://bdfun84nmgxtn" path="res://assets/audio/sfx_laser2.wav" id="3_ljpsh"]
+
+[sub_resource type="Gradient" id="Gradient_5edjv"]
+colors = PackedColorArray(0.6839, 0.7, 0.378, 1, 0.96389, 0.00477108, 0.131255, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_hj4x2"]
+gradient = SubResource("Gradient_5edjv")
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_xxl4t"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xs5f5"]
+particle_flag_disable_z = true
+directional_velocity_min = -200.0
+directional_velocity_max = 1.0
+directional_velocity_curve = SubResource("CurveXYZTexture_xxl4t")
+radial_velocity_min = 100.0
+radial_velocity_max = 100.0
+gravity = Vector3(0, 0, 0)
+scale_min = 5.0
+scale_max = 5.0
+color_ramp = SubResource("GradientTexture1D_hj4x2")
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_htsi0"]
 radius = 38.0
@@ -12,6 +33,11 @@ collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_6emnt")
 
+[node name="FireParticleEffect" type="GPUParticles2D" parent="."]
+position = Vector2(-38, 0)
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_xs5f5")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5708
 scale = Vector2(0.2, 0.2)
@@ -21,3 +47,6 @@ texture = ExtResource("1_per73")
 shape = SubResource("CapsuleShape2D_htsi0")
 
 [node name="RocketContainer" type="Node" parent="."]
+
+[node name="RocketSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_ljpsh")

@@ -1,0 +1,77 @@
+[gd_scene load_steps=6 format=3 uid="uid://33yi87ea5blf"]
+
+[ext_resource type="Script" path="res://scripts/game_over_screen.gd" id="1_br4pc"]
+[ext_resource type="FontFile" uid="uid://gm7loh8bjadu" path="res://assets/font/Kenney Blocks.ttf" id="1_j8txx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bf5f4"]
+bg_color = Color(0.161971, 0.0537389, 0.145787, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="LabelSettings" id="LabelSettings_cbb8y"]
+font = ExtResource("1_j8txx")
+font_size = 60
+font_color = Color(0.446844, 0.309732, 0.775999, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7s6gc"]
+font = ExtResource("1_j8txx")
+font_size = 40
+font_color = Color(0.447059, 0.309804, 0.776471, 1)
+
+[node name="GameOverScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_br4pc")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -574.0
+offset_top = -325.0
+offset_right = 574.0
+offset_bottom = 325.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_bf5f4")
+
+[node name="GameOver" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 354.0
+offset_top = 179.0
+offset_right = 744.0
+offset_bottom = 269.0
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_cbb8y")
+horizontal_alignment = 1
+
+[node name="Score" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 412.0
+offset_top = 266.0
+offset_right = 694.0
+offset_bottom = 367.0
+text = "SCORE: 9999"
+label_settings = SubResource("LabelSettings_7s6gc")
+
+[node name="RestartButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 467.0
+offset_top = 338.0
+offset_right = 655.0
+offset_bottom = 424.0
+theme_override_colors/font_color = Color(0.447059, 0.309804, 0.776471, 1)
+theme_override_fonts/font = ExtResource("1_j8txx")
+theme_override_font_sizes/font_size = 30
+text = "RESTART"
+
+[connection signal="pressed" from="Panel/RestartButton" to="." method="_on_restart_button_pressed"]
