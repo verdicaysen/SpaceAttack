@@ -8,14 +8,14 @@ var lives: int = 3
 #Let's initialize score to the hud.
 func _ready():
 	hud.set_score_label(score)
+	hud.set_lives(lives)
 
 func _on_player_took_damage():
 	lives -= 1
+	hud.set_lives(lives)
 	if lives == 0:
 		print("Game Over")
 		player.die()
-	else:
-		print("Player has", lives, " lives left.")
 		
 func _on_enemy_spawner_enemy_spawned(enemy_instance):
 	enemy_instance.connect("died", _on_enemy_died)
